@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anniversary Celebration</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Parisienne&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Petals Animation -->
+  <div class="petals">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti"></canvas>
+
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <h1>Happy Anniversary!</h1>
+    <p>Celebrating love, memories, and a lifetime together.</p>
+    <div class="quote">
+      <p>"Love is not about how many days, weeks, or months you've been together, it's all about how much you love each other every day."</p>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown">
+      <h3>Time Since We Met:</h3>
+      <div id="timer">
+        <span id="days"></span> Days
+        <span id="hours"></span> Hours
+        <span id="minutes"></span> Minutes
+        <span id="seconds"></span> Seconds
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    <h2>Hi Love</h2>
+    <p>Before you open the envelope, play the song first.</p>
+    
+    <!-- SPOTIFY SECTION -->
+    <div class="spotify">
+      <h3>Once in a Lifetime</h3>
+      <iframe 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/3aYCsSuW6ZgIESGteMF586?utm_source=generator" 
+        width="100%" 
+        height="152" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
+    </div>
+    
+    <!-- GALLERY SECTION -->
+    <h2>Moments Together</h2>
+    <div class="gallery">
+      <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="mySlides fade">
+          <img src="images/image1.png" alt="Memory 1">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/images2.png" alt="Memory 2">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/images3.png" alt="Memory 3">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/images4.png" alt="Memory 4">
+        </div>
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <!-- Dots for Slide Indicators -->
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>
+    </div>
+
+    <!-- Love Meter -->
+    <div class="love-meter">
+      <h3>How Much I Love You:</h3>
+      <div class="meter">
+        <div class="fill" style="width: 100%;"></div>
+      </div>
+      <p>100% ❤️</p>
+    </div>
+
+    <!-- ENVELOPE SECTION -->
+    <div class="envelope" id="openEnvelope">
+      <img src="images/Envelope.png" alt="Open Envelope">
+      <p>Open the Envelope</p>
+    </div>
+
+    <!-- Surprise Message -->
+    <div class="surprise">
+      <p>Hover over me!</p>
+      <div class="hidden-message">
+        <p>I love you more than words can say! ❤️</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODAL FOR LOVE LETTER -->
+  <div id="loveLetterModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>My Love Letter</h2>
+      <p class="love-letter">
+        Dear Love,<br><br>
+        Happy anniversary love, sana kahit malayo tayo sa isat isa ma enjoy mo pa den itong special na arraw para satin. Love I know that I am not the perfect girl that you dream off but I hope I am the only girl, even if I don’t give all you wanted in life. Du sorry kung lagi akong nag iiisp ns may iba kang babae, hind imo ako ma sisis dahil alam ko na hindi lang ako yung babaeng pinapantasya mo, at alam ko na habang tayo ay nag kakaroon ka den ng feelings sa iba, but  that’s okay kasi it is your own life, own feelings. Pero kahit ganon hidi mag babago yung pag mamahal ko sayo dahil ikaw ang nag paligaya sakin sayo ko narmdaman ang isang pag mamahal na walang halong biro at at halong panloloko, love a lot of things ang bumabagabag sa isip ko na , what if bigla mo akng iwan, na bigla mo akong ipag palit sa iba, I know na hindi mo maggawa yun pero love hindi ko den maiwasan na mag isip ng ganon lalo na at hindi ko hawak ang puso mo, hindi  ko alam kung meron ng iba or meron kanang iba, that’s why I thinking of things that about sa pinag palit pagpapalit. Love I also hate of saying na “iwan mo nalnag ako”, kasi love parang wala akong halaga or di kaya hinihintay mo nalnag akong bumitaw pra iwan ka, and that’s was actually na napapaiisp ako na baka meron ng iba. I am sorry for being that kind of mind I just don’t want you to leave me cause I love you so much du, kung alam mo lang kung gano ako katakot na iwan moa ko in the end of the day. I hope you’ll understand why I am like that. 
+        <br><br>In this 2nd anniversary love kahit anong hirap ng LDR para satin hind imo pa den ako iniiwan, and I thank you for that, being a n LDR is not easy, and thank you for understanding all the situation we have. I am Grateful to have you in my Life. I hope we have many years or forever together. Thank you for everything. I love you so much, du. ❤️
+        <br><br>Yours forever,<br>Rhea
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>With love, always &hearts;</p>
+  </footer>
+
+  <!-- Background Music -->
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="music/your-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- JAVASCRIPT FOR MODAL, CONFETTI, AND ENHANCEMENTS -->
+  <script>
+    // Modal Script
+var modal = document.getElementById('loveLetterModal');
+var envelope = document.getElementById('openEnvelope');
+var closeBtn = document.getElementById('closeModal');
+
+envelope.onclick = function() {
+  modal.style.display = 'block';
+};
+
+closeBtn.onclick = function() {
+  modal.style.display = 'none';
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// Confetti Script
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const confettiPieces = [];
+const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+
+function createConfetti() {
+  confettiPieces.push({
+    x: Math.random() * canvas.width,
+    y: -10,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    size: Math.random() * 10 + 5,
+    speed: Math.random() * 3 + 2,
+    rotation: Math.random() * 360,
+  });
+}
+
+function drawConfetti() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  confettiPieces.forEach((piece, index) => {
+    ctx.save();
+    ctx.translate(piece.x, piece.y);
+    ctx.rotate(piece.rotation * Math.PI / 180);
+    ctx.fillStyle = piece.color;
+    ctx.fillRect(-piece.size / 2, -piece.size / 2, piece.size, piece.size);
+    ctx.restore();
+
+    piece.y += piece.speed;
+    piece.rotation += 2;
+
+    if (piece.y > canvas.height) {
+      confettiPieces.splice(index, 1);
+    }
+  });
+
+  requestAnimationFrame(drawConfetti);
+}
+
+setInterval(createConfetti, 150);
+drawConfetti();
+
+// Countdown Timer Script
+const anniversaryDate = new Date("2023-03-17"); // Replace with your anniversary date
+
+function updateTimer() {
+  const now = new Date();
+  const diff = now - anniversaryDate;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent = days;
+  document.getElementById('hours').textContent = hours;
+  document.getElementById('minutes').textContent = minutes;
+  document.getElementById('seconds').textContent = seconds;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+
+// Slideshow Script
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  // Remove active class from all dots
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  // Move to the next slide
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1; // Reset to the first slide
+  }
+
+  // Display the current slide and highlight the corresponding dot
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+
+  // Change slide every 3 seconds (3000ms)
+  setTimeout(showSlides, 3000);
+}
+
+// Manual Navigation (Optional)
+function plusSlides(n) {
+  slideIndex += n;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  if (slideIndex < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
+
+// Jump to a Specific Slide (Optional)
+function currentSlide(n) {
+  slideIndex = n;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
+
+  </script>
+</body>
+</html>

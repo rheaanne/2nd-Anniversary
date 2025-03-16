@@ -1,0 +1,505 @@
+/* ----- RESET / BASIC STYLES ----- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Parisienne', cursive;
+    background: url('images/romantic-background.jpg') no-repeat center center/cover, #e89f9fc1;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* ----- HERO SECTION ----- */
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(232, 159, 159, 0.5), rgba(222, 144, 145, 0.7));
+    z-index: 0;
+  }
+  
+  .hero h1, .hero p {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+    animation: heartbeat 2s infinite;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ----- CONTENT WRAPPER ----- */
+  .content {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 10px solid transparent;
+    border-image: url('images/floral-border.png') 30 round;
+  }
+  
+  /* ----- SPOTIFY EMBED ----- */
+  .spotify iframe {
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    height: 152px;
+  }
+  
+  /* ----- GALLERY SECTION ----- */
+  /* Slideshow Container */
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Slides */
+  .mySlides {
+    display: none;
+    animation: fade 1.5s ease-in-out;
+  }
+  
+  .mySlides img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Fade Animation */
+  @keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Dots for Slide Indicators */
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #e91e63;
+  }
+  /* ----- ENVELOPE ----- */
+  .envelope {
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .envelope:hover {
+    transform: scale(1.1);
+    animation: pulse 1s ease;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1.1); }
+  }
+  
+  .envelope img {
+    width: 300px;
+    height: auto;
+  }
+  
+  /* ----- MODAL ----- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    animation: modalFadeIn 0.5s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .love-letter {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .modal-gallery {
+    display: center;
+    position: relative;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .modal-gallery img {
+    width: 48%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ----- FOOTER ----- */
+  footer {
+    background: linear-gradient(45deg, #de9091c1, #e89f9fc1);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+  }
+  
+  footer::before {
+    content: "❤️";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+  }
+  
+  /* ----- PETALS ANIMATION ----- */
+  .petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('images/petals.gif') no-repeat center center/cover;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(-10%); opacity: 0; }
+    100% { transform: translateY(100vh); opacity: 1; }
+  }
+  
+  /* ----- COUNTDOWN TIMER ----- */
+  .countdown {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #8a0b0b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  #timer span {
+    font-weight: bold;
+    color: #201e1f;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* ----- Responsive Adjustments for Phones ----- */
+  @media (max-width: 600px) {
+    .countdown {
+      font-size: 1.2rem; /* Slightly smaller font for mobile */
+    }
+    #timer {
+      flex-wrap: wrap;        /* Let items wrap to new lines if needed */
+      gap: 5px;               /* Reduce gap for smaller screens */
+      justify-content: center;
+      align-items: center;    /* Keep text centered in each line */
+    }
+  }
+  
+  /* Dots for Slide Indicators */
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #e91e63;
+  }
+  
+  /* ----- SLIDESHOW ----- */
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .mySlides img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  /* ----- LOVE METER ----- */
+  .love-meter {
+    margin: 20px 0;
+  }
+  
+  .meter {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e91e63, #ff9800);
+    border-radius: 10px;
+  }
+  /* Modal Styling */
+  .modal {
+    display: none;             /* Hidden by default */
+    position: fixed;           /* Stay in place */
+    z-index: 9999;             /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;               /* Full width */
+    height: 100%;              /* Full height */
+    overflow: auto;            /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  }
+  
+  /* Modal Content Box */
+  .modal-content {
+    background: linear-gradient(135deg, #ffe0e0, #ffcccc);
+    margin: 5% auto;             /* 5% from the top, centered */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;            /* Adjust for your preference */
+    position: relative;
+    animation: modalFadeIn 0.5s ease-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Fade-in Animation */
+  @keyframes modalFadeIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Close Button */
+  .close {
+    color: #333;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: #e91e63;
+  }
+  
+  /* Container for the Love Letter */
+  .love-letter-container {
+    font-family: 'Georgia', serif;   /* Readable serif font */
+    color: #333;                     /* Dark text for contrast */
+    font-size: 1.2rem;               /* Increase font size */
+    line-height: 1.8;                /* Spacing between lines */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Title Styling */
+  .love-letter-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e91e63;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Actual Letter Text */
+  .love-letter {
+    text-align: justify;
+    white-space: pre-wrap;  /* Preserves line breaks and spacing */
+  }
+  
+  /* Slight spacing for line breaks */
+  .love-letter br {
+    margin-top: 10px;
+  }
+  
+  
+  /* ----- SURPRISE MESSAGE ----- */
+  .surprise {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hidden-message {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .surprise:hover .hidden-message {
+    display: block;
+  }
+  
+  /* ----- CUSTOM SCROLLBAR ----- */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e91e63;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c2185b;
+  }
